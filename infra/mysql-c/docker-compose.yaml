@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  mysql1:
+    image: mysql:8.4.0
+    restart: always
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      - mysql1_data:/var/lib/mysql
+    ports:
+      - "3006:3006"
+    networks:
+      - mysql_networks
+
+  mysql2:
+    image: mysql:8.4.0
+    restart: always
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      - mysql2_data:/var/lib/mysql
+    ports:
+      - "3007:3006"
+    networks:
+      - mysql_networks
+
+volumes:
+  mysql1_data:
+  mysql2_data:
+
+networks:
+  mysql_networks:
