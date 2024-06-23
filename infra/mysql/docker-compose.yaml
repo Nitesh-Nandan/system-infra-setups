@@ -10,7 +10,7 @@ services:
     volumes:
       - mysql_db_data:/var/lib/mysql
     ports:
-      - "3006:3006"
+      - "3306:3306"
   db-cli:
     image: cli:1.1
     restart: always

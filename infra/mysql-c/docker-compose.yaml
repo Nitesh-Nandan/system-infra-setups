@@ -10,7 +10,7 @@ services:
     volumes:
       - mysql1_data:/var/lib/mysql
     ports:
-      - "3006:3006"
+      - "3306:3306"
     networks:
       - mysql_networks
 
@@ -24,7 +24,7 @@ services:
     volumes:
       - mysql2_data:/var/lib/mysql
     ports:
-      - "3007:3006"
+      - "3307:3306"
     networks:
       - mysql_networks
 
