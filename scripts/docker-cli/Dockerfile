@@ -3,12 +3,12 @@ FROM ubuntu:latest
 
 # Install app dependencies
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip mysql-shell curl vim && \
+    apt-get install -y python3 python3-pip mysql-shell curl vim mysql-client && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /home
+WORKDIR /app
 
 # COPY Scritps for easy access
 COPY commands.md /home/commands.md
