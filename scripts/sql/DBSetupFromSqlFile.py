@@ -1,15 +1,17 @@
 import mysql.connector
 
 # Database connection details
-resource_dir = "/Users/niteshnandan/workspace/system-infra-setups/resources/"
 config = {
     'user': 'root',
     'password': 'password',
     'host': 'localhost'
 }
 
+# Change resource dir if needed
+resource_dir = "/Users/niteshnandan/workspace/system-infra-setups/resources/"
 file_path = f"{resource_dir}/airlines/001-airlines-schema.sql"
 
+# Don't Modify any code below this file
 connection = mysql.connector.connect(**config)
 cursor = connection.cursor()
 

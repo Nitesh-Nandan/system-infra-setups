@@ -5,6 +5,7 @@ from db_query_generator import MySqlQueryGenerator
 
 faker = Faker()
 
+# Your table config goes here
 table_config = {
     'table_name': 'users',
     'rows': 5,
@@ -13,6 +14,7 @@ table_config = {
                lambda: faker.city()]
 }
 
+# Your Mysql config goes here
 mysql_config = {
     'host': 'localhost',
     'database': 'airlines',
@@ -21,6 +23,7 @@ mysql_config = {
 }
 
 
+# Don't modify any code below this line
 def run_query():
     connection = getMySqlConnection()
     if connection is None:
