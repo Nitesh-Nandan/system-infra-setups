@@ -11,7 +11,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # COPY Scritps for easy access
-COPY commands.md /app/commands.md
+COPY commands.md /home/commands.md
 
 CMD ["tail", "-f", "/dev/null"]
 LABEL authors="niteshnandan"

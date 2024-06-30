@@ -1,10 +1,13 @@
 version: '3.8'
 services:
   cli:
-    image: cli:1.1
+    image: cli:1.0
     restart: always
     volumes:
       - ../../resources:/home/resources
 
     entrypoint: [ "/bin/bash", "-c" ]
     command: [ "tail -f /dev/null" ]
+
+#    ports:
+#      - "7001:7001"
