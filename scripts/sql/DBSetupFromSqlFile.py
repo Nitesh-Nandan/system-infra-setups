@@ -9,7 +9,7 @@ config = {
 
 # Change resource dir if needed
 resource_dir = "/Users/niteshnandan/workspace/system-infra-setups/resources/"
-file_path = f"{resource_dir}/airlines/001-airlines-schema.sql"
+file_path = f"{resource_dir}/generated/001-usersTable.sql"
 
 # Don't Modify any code below this file
 connection = mysql.connector.connect(**config)

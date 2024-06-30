@@ -7,6 +7,7 @@ def MySqlQueryGenerator(config):
     validate_sql_config(config)
 
     table_name = config['table_name']
+    database = config['database']
     num_rows = 5 if 'rows' not in config else config['rows']
     columns = config['columns']
     values_functions = config['values']
@@ -18,7 +19,7 @@ def MySqlQueryGenerator(config):
 
     columns_str = ', '.join(f'`{col}`' for col in columns)
     values_str = ',\n\t'.join([f"({', '.join(repr(value) for value in values)})" for values in values_list])
-    query = f"INSERT INTO `{table_name}` ({columns_str})\nVALUES\n\t{values_str};"
+    query = f"INSERT INTO {database}.`{table_name}` ({columns_str})\nVALUES\n\t{values_str};"
 
     return query
 
